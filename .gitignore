@@ -1,0 +1,16 @@
+bin/
+obj/
+.vs/
+.vscode/
+*.dll
+*.exe
+*.pdb
+*.log
+*.tmp
+*.swp
+Thumbs.db
+.env
+.vs/
+config
+config.pub
+.DS_Store
