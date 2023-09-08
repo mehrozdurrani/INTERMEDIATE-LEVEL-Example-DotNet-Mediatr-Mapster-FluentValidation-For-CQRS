@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MediatR;
 using UsingMediatrCQRS.DataStore;
 
@@ -21,7 +17,7 @@ namespace UsingMediatrCQRS.Notifications
             CancellationToken cancellationToken
         )
         {
-            await _dummyDataStore.EventOccured(notification.person, "Email Sent!");
+            await _dummyDataStore.PersonRegisterEventOccured(notification.person, "Email Sent!");
             await Task.CompletedTask;
         }
     }

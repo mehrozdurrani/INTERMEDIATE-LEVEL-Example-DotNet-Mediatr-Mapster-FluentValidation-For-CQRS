@@ -29,7 +29,7 @@ namespace UsingMediatrCQRS.DataStore
             return person;
         }
 
-        public async Task EventOccured(Person person, string ev)
+        public async Task PersonRegisterEventOccured(Person person, string ev)
         {
             _persons.Single(p => p.Id == person.Id).Events += $"Event Occured {ev}, ";
             await Task.CompletedTask;
