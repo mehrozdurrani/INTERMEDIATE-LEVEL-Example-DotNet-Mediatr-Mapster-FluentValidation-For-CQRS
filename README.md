@@ -1,10 +1,10 @@
 # CQRS with MediatR in .NET 7
 
-Welcome to the CQRS with MediatR educational project! This repository demonstrates how to implement the Command Query Responsibility Segregation (CQRS) pattern using MediatR in .NET 7. This project is designed to help you understand the separation of queries and commands, a fundamental concept in modern software architecture.
+Welcome to the CQRS with MediatR educational project! This repository demonstrates how to implement the Command Query Responsibility Segregation (CQRS) pattern using MediatR in .NET 7. This project is designed to help you understand the separation of queries, commands and notifications, a fundamental concept in modern software architecture.
 
 ## Project Overview
 
-This simple application allows you to perform basic operations of adding and retrieving a person's data. It serves as an excellent resource for anyone looking to learn and explore CQRS using MediatR.
+This simple application allows you to perform basic operations of adding, retrieving a person's data and publish notification on person register. It serves as an excellent resource for anyone looking to learn and explore CQRS using MediatR.
 
 ### Features
 
@@ -13,6 +13,8 @@ This simple application allows you to perform basic operations of adding and ret
 2. **Get Person**: Retrieve a specific person's information by their unique identifier.
 
 3. **Get All Persons**: Retrieve a list of all registered persons in the system.
+
+4. **Notification**: Publish notification on person register
 
 ## Usage
 
