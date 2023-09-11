@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using MapsterMapper;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using UsingMediatrCQRS.Commands;
 using UsingMediatrCQRS.Contracts;
@@ -12,10 +13,12 @@ namespace UsingMediatrCQRS.Controllers
     public class PersonController : ApiController
     {
         private readonly IMediator _mediator;
+        private readonly IMapper _mapper;
 
-        public PersonController(IMediator mediator, DummyDataStore dummyDataStore)
+        public PersonController(IMediator mediator, IMapper mapper)
         {
             _mediator = mediator;
+            _mapper = mapper;
         }
 
         [HttpGet("all")]
@@ -35,9 +38,8 @@ namespace UsingMediatrCQRS.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> RegisterPerson(RegisterRequest request)
         {
-            var result = await _mediator.Send(
-                new RegisterPersonCommand(FirstName: request.FirstName, LastName: request.LastName)
-            );
+            var commmand = _mapper.Map<RegisterPersonCommand>(request);
+            var result = await _mediator.Send(commmand);
             await _mediator.Publish(new PersonRegisterNotification(result));
             return Ok(result);
         }
