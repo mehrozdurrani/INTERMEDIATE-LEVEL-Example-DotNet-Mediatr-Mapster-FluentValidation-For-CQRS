@@ -3,5 +3,6 @@ using UsingMediatrCQRS.Model;
 
 namespace UsingMediatrCQRS.Notifications
 {
-    public record PersonRegisterNotification(Person person) : INotification;
+    public record PersonRegisterNotification(Person person, List<NotificationEvent> events)
+        : INotification;
 }

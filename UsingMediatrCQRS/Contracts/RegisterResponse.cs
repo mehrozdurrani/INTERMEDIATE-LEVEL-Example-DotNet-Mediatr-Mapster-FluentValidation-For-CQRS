@@ -1,4 +1,6 @@
+using UsingMediatrCQRS.Model;
+
 namespace UsingMediatrCQRS.Contracts
 {
-    public record RegisterResponse(int Id, string FirstName, string LastName);
+    public record RegisterResponse(Person Person, List<NotificationEvent> Events);
 }

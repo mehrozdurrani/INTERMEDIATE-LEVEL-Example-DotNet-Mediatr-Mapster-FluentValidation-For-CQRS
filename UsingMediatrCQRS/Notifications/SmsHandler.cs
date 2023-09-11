@@ -1,5 +1,6 @@
 using MediatR;
 using UsingMediatrCQRS.DataStore;
+using UsingMediatrCQRS.Model;
 
 namespace UsingMediatrCQRS.Notifications
 {
@@ -17,7 +18,9 @@ namespace UsingMediatrCQRS.Notifications
             CancellationToken cancellationToken
         )
         {
-            await _dummyDataStore.PersonRegisterEventOccured(notification.person, "Sms Sent!");
+            NotificationEvent ev = NotificationEvent.Create("Email Event");
+            await _dummyDataStore.PersonRegisterEventOccured(notification.person, ev);
+            notification.events.Add(ev);
             await Task.CompletedTask;
         }
     }

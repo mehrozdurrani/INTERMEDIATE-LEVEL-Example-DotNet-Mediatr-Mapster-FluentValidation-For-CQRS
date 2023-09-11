@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using UsingMediatrCQRS.Model;
 
 namespace UsingMediatrCQRS.DataStore
@@ -29,9 +30,10 @@ namespace UsingMediatrCQRS.DataStore
             return person;
         }
 
-        public async Task PersonRegisterEventOccured(Person person, string ev)
+        public async Task PersonRegisterEventOccured(Person person, NotificationEvent ev)
         {
-            _persons.Single(p => p.Id == person.Id).Events += $"Event Occured {ev}, ";
+            // _persons.Single(p => p.Id == person.Id).Events += $"Event Occured {ev}, ";
+            ev.MarkEventAsCompelete();
             await Task.CompletedTask;
         }
     }
