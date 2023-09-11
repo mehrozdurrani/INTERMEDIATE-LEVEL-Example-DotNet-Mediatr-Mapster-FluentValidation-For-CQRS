@@ -15,7 +15,6 @@ namespace UsingMediatrCQRS.Mapping
             map it as '.Map(dest => dest.FullName, src => $"{src.FirstName} {src.LastName}"). In this Scenario
             mapping can very usful
             */
-
             config
                 .NewConfig<RegisterRequest, RegisterPersonCommand>()
                 .Map(
