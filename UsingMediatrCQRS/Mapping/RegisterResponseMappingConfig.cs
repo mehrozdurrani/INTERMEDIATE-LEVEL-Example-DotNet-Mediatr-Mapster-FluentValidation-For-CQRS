@@ -1,4 +1,7 @@
 using Mapster;
+using UsingMediatrCQRS.Contracts;
+using UsingMediatrCQRS.Model;
+using Person = UsingMediatrCQRS.Model.Person;
 
 namespace UsingMediatrCQRS.Mapping
 {
@@ -6,7 +9,11 @@ namespace UsingMediatrCQRS.Mapping
     {
         public void Register(TypeAdapterConfig config)
         {
-            throw new NotImplementedException();
+            config
+                .NewConfig<(Person person, List<NotificationEvent> evs), RegisterResponse>()
+                .ConstructUsing(
+                    sourceMember => new RegisterResponse(sourceMember.person, sourceMember.evs)
+                );
         }
     }
 }

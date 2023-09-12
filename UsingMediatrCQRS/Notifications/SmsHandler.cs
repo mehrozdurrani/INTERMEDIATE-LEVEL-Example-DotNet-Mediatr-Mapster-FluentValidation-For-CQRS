@@ -18,7 +18,7 @@ namespace UsingMediatrCQRS.Notifications
             CancellationToken cancellationToken
         )
         {
-            NotificationEvent ev = NotificationEvent.Create("Email Event");
+            NotificationEvent ev = NotificationEvent.Create("SMS Event");
             await _dummyDataStore.PersonRegisterEventOccured(notification.person, ev);
             notification.events.Add(ev);
             await Task.CompletedTask;

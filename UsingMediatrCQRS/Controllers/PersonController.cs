@@ -3,7 +3,6 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using UsingMediatrCQRS.Commands;
 using UsingMediatrCQRS.Contracts;
-using UsingMediatrCQRS.DataStore;
 using UsingMediatrCQRS.Model;
 using UsingMediatrCQRS.Notifications;
 using UsingMediatrCQRS.Queries;
@@ -43,8 +42,8 @@ namespace UsingMediatrCQRS.Controllers
             var result = await _mediator.Send(commmand);
             List<NotificationEvent> eventsOccured = new();
             await _mediator.Publish(new PersonRegisterNotification(result, eventsOccured));
-
-            return Ok(result);
+            var response = _mapper.Map<RegisterResponse>((result, eventsOccured));
+            return Ok(response);
         }
     }
 }
