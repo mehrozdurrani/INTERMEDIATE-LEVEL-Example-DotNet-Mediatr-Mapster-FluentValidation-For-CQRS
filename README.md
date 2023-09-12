@@ -31,9 +31,21 @@ This simple application allows you to perform basic operations of adding, retrie
 #### Response JSON
 ```json
 {
-    "Id" : 1,
-    "FirstName": "John",
-    "LastName": "Doe"
+    "person": {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe"
+  },
+  "events": [
+    {
+      "name": "Email Event",
+      "eventIsCompleted": true
+    },
+    {
+      "name": "SMS Event",
+      "eventIsCompleted": true
+    }
+  ]
 }
 ```
 ### Get Person Request
