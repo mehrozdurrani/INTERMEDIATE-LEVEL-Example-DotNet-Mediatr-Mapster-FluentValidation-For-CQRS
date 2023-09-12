@@ -11,9 +11,21 @@
 # Register Person Response
 ```json
 {
-    "Id" : 1,
-    "FirstName": "Jhon",
-    "LastName": "Doe"
+    "person": {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe"
+  },
+  "events": [
+    {
+      "name": "Email Event",
+      "eventIsCompleted": true
+    },
+    {
+      "name": "SMS Event",
+      "eventIsCompleted": true
+    }
+  ]
 }
 ```
 
