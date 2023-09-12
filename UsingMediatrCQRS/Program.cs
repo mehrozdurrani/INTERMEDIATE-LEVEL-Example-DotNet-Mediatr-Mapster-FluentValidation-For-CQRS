@@ -1,4 +1,5 @@
 ﻿using UsingMediatrCQRS;
+using UsingMediatrCQRS.Behaviour;
 using UsingMediatrCQRS.DataStore;
 using UsingMediatrCQRS.Mapping;
 
@@ -14,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddMediatrDependencies();
     builder.Services.AddDummyDataStore();
     builder.Services.AddCustomMapping();
+    builder.Services.AddFluentValidation();
 }
 
 var app = builder.Build();
