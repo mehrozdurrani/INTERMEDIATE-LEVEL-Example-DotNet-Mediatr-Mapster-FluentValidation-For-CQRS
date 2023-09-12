@@ -1,6 +1,6 @@
 # CQRS with MediatR in .NET 7
 
-Welcome to the CQRS with MediatR educational project! This repository demonstrates how to implement the Command Query Responsibility Segregation (CQRS) pattern using **MediatR** and **Mapster** in .NET 7. This project is designed to help you understand the separation of queries, commands and notifications, a fundamental concept in modern software architecture.
+Welcome to the CQRS with MediatR educational project! This repository demonstrates how to implement the Command Query Responsibility Segregation (CQRS) pattern using **MediatR**, **Mapster** and **FluentValidation** in .NET 7. This project is designed to help you understand the separation of queries, commands and notifications, a fundamental concept in modern software architecture.
 
 ## Project Overview
 
@@ -81,7 +81,7 @@ To run this project and learn about CQRS with MediatR in .NET 7, follow these st
 - Open the project in your preferred .NET IDE.
 - Run the application.
 - Use your favorite API testing tool (e.g., Postman, Httpie) to send requests to the provided endpoints as mentioned above.
-- Study the code, especially the usage of MediatR and Mapster for command and query handling.
+- Study the code, especially the usage of MediatR, Mapster and FluentValidation for command and query handling.
 
 ## How to Contribute
 
